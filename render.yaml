@@ -3,7 +3,7 @@ services:
     name: remix-eg
     env: node
     plan: free
-    buildCommand: cd remix-eg && yarn install 
+    buildCommand: cd remix-eg && yarn; yarn build 
     startCommand: cd remix-eg && yarn start
     envVars:
       - key: DB_URL
