@@ -9,3 +9,10 @@ services:
       maxInstances: 3
       targetMemoryPercent: 60 # optional if targetCPUPercent is set
       targetCPUPercent: 60 # optional if targetMemory is set
+    envVars:
+      - key: STRIPE_API_KEY
+        value: Z2V0IG91dHRhIGhlcmUhCg
+      # - key: DB_URL
+      #   fromDatabase:
+      #     name: elephant
+      #     property: connectionString
