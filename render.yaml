@@ -2,11 +2,20 @@ services:
   - type: web
     name: remix-eg
     env: node
-    buildCommand: yarn build
-    startCommand: yarn start
+    plan: free
+    buildCommand: cd remix-eg && yarn build
+    startCommand: cd remix-eg && yarn start
     # scaling:
     #   minInstances: 1
     #   maxInstances: 1
     #   targetMemoryPercent: 60 # optional if targetCPUPercent is set
     #   targetCPUPercent: 60 # optional if targetMemory is set
-  
+
+databases:
+  - name: elephant
+    plan: free
+    databaseName: mydb # optional (Render may add a suffix)
+    user: adrian # optional
+    ipAllowList:
+      - source: 81.156.247.27
+        description: home
