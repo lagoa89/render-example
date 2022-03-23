@@ -3,8 +3,13 @@ services:
     name: remix-eg
     env: node
     plan: free
-    buildCommand: cd remix-eg && yarn build
+    buildCommand: cd remix-eg && yarn install && yarn build
     startCommand: cd remix-eg && yarn start
+    envVars:
+      - key: DB_URL
+        fromDatabase:
+          name: elephant
+          property: connectionString
     # scaling:
     #   minInstances: 1
     #   maxInstances: 1
